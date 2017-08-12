@@ -8,8 +8,11 @@
         <script type="text/javascript">
             var username = getCookie("DiscordUsernameVar");
             if (username != "") {
-                   window.location.href = "https://discordapp.com/invite/K6Me7FA" + "?username=t";
-            }
+                setTimeout(function (){
+
+                window.location.href = "https://discordapp.com/invite/K6Me7FA" + "?username=" + username;
+
+            }, 5000);            }
             else {
                 window.location.href = "https://discord.gg/K6Me7FA";
             }
