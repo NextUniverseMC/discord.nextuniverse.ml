@@ -1,15 +1,39 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
+        <noscript>
         <meta charset="UTF-8">
         <meta http-equiv="refresh" content="1; url=https://discord.gg/K6Me7FA">
+        </noscript>
         <script type="text/javascript">
-            window.location.href = "https://discord.gg/K6Me7FA"
+            var username = getCookie("DiscordUsernameVar");
+            if (username != "") {
+                   window.location.href = "https://discord.gg/K6Me7FA?username=" + username;
+            }
+            else {
+                window.location.href = "https://discord.gg/K6Me7FA";
+            }
+            
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i <ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+               return "";
+         }
         </script>
         <title>Redirection to Discord</title>
     </head>
     <body>
         <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-        If you are not redirected automatically, follow this <a href='https://discord.gg/K6Me7FA'>link to example</a>.
+        If you are not redirected automatically, follow this <a href='https://discord.gg/K6Me7FA'>click here</a>.
     </body>
 </html>
